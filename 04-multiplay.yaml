@@ -1,6 +1,6 @@
 - name: play1
   hosts: local
-  connections: local
+  connection: local
   tasks:
   - name: play 1 and task 1
     ansible.builtin.debug:
@@ -8,7 +8,7 @@
 
 - name: play2
   hosts: local
-  connections: local
+  connection: local
   tasks:
   - name: play 2 and task 2
     ansible.builtin.debug:
