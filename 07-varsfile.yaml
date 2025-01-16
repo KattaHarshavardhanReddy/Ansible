@@ -6,8 +6,9 @@
  
   tasks:
   - name: print the var1
-    vars_files:
-    - training.yaml
+    vars:
+      course: "Shell"
+      duration: "1 week"
     ansible.builtin.debug:
       msg: "Course is {{course}} and Duration is {{duration}}"
 
