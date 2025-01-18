@@ -4,6 +4,8 @@
   vars: # play level
     Harsha: Play
   tasks:
-  - name: from play 1
+  - name: from play task
+    vars: # task level
+      Harsha: task
     ansible.builtin.debug:
       msg: "Hello from {{ Harsha }}"
