@@ -3,6 +3,8 @@
   connection: local
   vars: # play level
     Harsha: Play
+  vars_files: #from file
+    - training.yaml
   tasks:
   - name: from play task
     vars: # task level
