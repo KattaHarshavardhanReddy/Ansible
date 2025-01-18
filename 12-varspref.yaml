@@ -5,9 +5,9 @@
     Harsha: Play
   #vars_files: #from file
   #  - training.yaml
-  vars_prompt: # from prompt
-    - name: Harsha
-      prompt: Please enter the value
+  #vars_prompt: # from prompt
+  #  - name: Harsha
+   #   prompt: Please enter the value
     
   tasks:
   - name: from play task
@@ -20,3 +20,4 @@
 #1.args
 #2.task
 #3.file
+#4.prompt
