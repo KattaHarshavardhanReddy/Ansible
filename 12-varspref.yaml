@@ -1,11 +1,11 @@
 - name: variables with preference
   hosts: local
   connection: local
-  vars: # play level
+  vars_play: # play level
     Harsha: Play
   vars_files: #from file
     - training.yaml
-  vars: # from prompt
+  vars_prompt: # from prompt
     - name: Harsha
       prompt: Please enter the value
     
