@@ -3,8 +3,8 @@
   connection: local
   vars: # play level
     Harsha: Play
-  vars_files: #from file
-    - training.yaml
+  #vars_files: #from file
+  #  - training.yaml
   vars_prompt: # from prompt
     - name: Harsha
       prompt: Please enter the value
@@ -15,3 +15,8 @@
       #Harsha: task
     ansible.builtin.debug:
       msg: "Hello from {{ Harsha }}"
+
+
+#1.args
+#2.task
+#3.file
