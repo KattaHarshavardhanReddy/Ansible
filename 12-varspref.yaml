@@ -1,7 +1,7 @@
 - name: variables with preference
   hosts: local
   connection: local
-  vars_play: # play level
+  vars: # play level
     Harsha: Play
   vars_files: #from file
     - training.yaml
