@@ -3,5 +3,6 @@
   connection: local
   tasks:
   - name: executive command
-    ansible.builtin.shell : ls -ltr
+    ansible.builtin.command: ls -ltr > /tmp/output.txt
+    
 
