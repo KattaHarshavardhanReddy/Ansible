@@ -9,10 +9,10 @@
   - name: executive command
     #ansible.builtin.command: ls 
     ansible.builtin.command: ls -ltr
-    register: command-res
+    register: command_res
 
   - name: read command output
     ansible.builtin.debug:
-      msg: "{{ command-res }}"
+      msg: "{{ command_res }}"
 
 
