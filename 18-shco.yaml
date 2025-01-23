@@ -8,7 +8,7 @@
 
   - name: executive command
     #ansible.builtin.command: ls 
-    ansible.builtin.command: ls -abvf
+    ansible.builtin.command: lsg -abvf
     register: command_res
 
   - name: read command output
