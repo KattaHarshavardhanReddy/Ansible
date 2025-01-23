@@ -13,6 +13,6 @@
 
   - name: read command output
     ansible.builtin.debug:
-      msg: {{ command-res }}
+      msg: "{{ command-res }}"
 
 
