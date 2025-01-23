@@ -3,7 +3,11 @@
   connection: local
   tasks:
   - name: executive command
-    #ansible.builtin.command: ls -ltr > /tmp/output.txt
-    ansible.builtin.shell: ls -ltr > /tmp/output.txt
+    #ansible.builtin.command: ls -ltr > /tmp/output.txt # it cannot be executed
+    ansible.builtin.shell: ls -ltr > /tmp/output.txt # it will execute
+
+  - name: executive command
+    ansible.builtin.command: ls 
+    #ansible.builtin.shell: ls 
 
 
