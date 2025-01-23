@@ -1,7 +1,7 @@
 - name: shell vs command
-  host: local
+  hosts: local
   connection: local
   task:
   - name: executive command
     ansible.builtin.shell : ls -ltr
-    
+
