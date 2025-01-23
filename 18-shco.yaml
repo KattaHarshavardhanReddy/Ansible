@@ -8,6 +8,11 @@
 
   - name: executive command
     #ansible.builtin.command: ls 
-    ansible.builtin.shell: ls 
+    ansible.builtin.command: ls -ltr
+    register: command-res
+
+  - name: read command output
+    ansible.builtin.debug:
+      msg: {{ command-res }}
 
 
