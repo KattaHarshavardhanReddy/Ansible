@@ -8,6 +8,6 @@
 
   - name: executive command
     ansible.builtin.command: ls 
-    #ansible.builtin.shell: ls 
+    ansible.builtin.shell: ls 
 
 
