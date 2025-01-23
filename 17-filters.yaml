@@ -11,9 +11,9 @@
       fruits: "apple, banana, orange" #String
     ansible.builtin.debug:
       msg: "Fruits are: {{ fruits | split(',') }}"
-      
+
   - name: check ipaddress is valid or not
     vars:
-      ip: "192.168.1.1"
+      ip: "192.168.1.1.89"
     ansible.builtin.debug:
       msg: "{{ ip | ansible.utils.ipaddr }}"
