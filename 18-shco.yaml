@@ -7,7 +7,7 @@
     ansible.builtin.shell: ls -ltr > /tmp/output.txt # it will execute
 
   - name: executive command
-    ansible.builtin.command: ls 
+    #ansible.builtin.command: ls 
     ansible.builtin.shell: ls 
 
 
