@@ -2,5 +2,8 @@
   hosts: backend
   become: yes
   tasks:
-  - name: uninstall nodejs
-    ansible.builtin.command: dnf install nodejs -y
+  - name: disable nodejs
+    ansible.builtin.command: dnf module disable nodejs -y
+
+  - name: enable nodejs
+    ansible.builtin.command: dnf module enable nodejs:20 -y
