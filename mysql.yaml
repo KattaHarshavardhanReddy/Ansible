@@ -2,6 +2,11 @@
   hosts: mysql
   become: yes
   tasks:
+  - name: installing modules
+    ansible.builtin.command:
+      name: PyMySQL
+      executable: pip3.9
+
   - name: installing mysql
     ansible.builtin.package:
       name: mysql-server
@@ -19,11 +24,6 @@
       login_password: ExpenseApp@1
       login_host: mysql.katta.blog
     register: mysql_info
-
-  - name: installing modules
-    ansible.builtin.command:
-      name: PyMySQL
-      executable: pip3.9
 
   - name: print output
     ansible.builtin.debug:
