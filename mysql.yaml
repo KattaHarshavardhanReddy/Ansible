@@ -1,6 +1,9 @@
 - name: install mysql db
   hosts: mysql
   become: yes
+  vars_prompt:
+  - name: password
+    prompt: enter the password
   tasks:
   - name: installing modules
     ansible.builtin.pip:
@@ -21,7 +24,7 @@
   - name: connect to mysql server
     community.mysql.mysql_info:
       login_user: root
-      login_password: ExpenseApp@1
+      login_password: {{ vars_prompt }}
       login_host: mysql.katta.blog
     register: mysql_info
     ignore_errors: true
@@ -31,5 +34,5 @@
      msg: "mysql_info {{ mysql_info }}"
 
   - name: set root password
-    ansible.builtin.command: " mysql_secure_installation --set-root-pass ExpenseApp@1 "
+    ansible.builtin.command: " mysql_secure_installation --set-root-pass {{ vars_prompt }} "
     when: mysql_info.failed is true
