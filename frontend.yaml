@@ -28,3 +28,9 @@
     ansible.builtin.get_url:
       url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
       dest: /tmp/frontend.zip
+
+  - name: unzip the file
+    ansible.builtin.unarchive:
+      src:  /tmp/frontend.zip
+      dest: /usr/local/bin
+      remote_src: yes
