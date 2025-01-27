@@ -27,4 +27,4 @@
 
   - name: print output
     ansible.builtin.debug:
-     msg: mysql_info "{{ mysql_info }}"
+     msg: "mysql_info {{ mysql_info }}"
