@@ -18,3 +18,13 @@
       name: nginx
       state: started
       enabled: yes
+
+  - name: remove the files
+    ansible.builtin.file:
+      path: /usr/share/nginx/html
+      state: absent
+
+- name: create a url
+    ansible.builtin.get_url:
+      url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
+      dest: /tmp/frontend.zip
