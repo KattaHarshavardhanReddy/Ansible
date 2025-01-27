@@ -21,7 +21,7 @@
       state: directory
 
   - name: create a url
-    ansible.builtin.uri:
+    ansible.builtin.get_url:
       url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
       dest: /tmp/backend.zip
 
@@ -33,4 +33,4 @@
 
   - name: install dependencies
     ansible.builtin.command: dnf install npm -y
-    
+
