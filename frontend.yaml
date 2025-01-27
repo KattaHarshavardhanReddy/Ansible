@@ -1,4 +1,4 @@
-- name: install nginx
+- name: instal nginx
   hosts: frontend
   become: yes
   tasks:
@@ -7,35 +7,34 @@
      name: nginx
      state: present
 
- # - name: start and enable nginx
- #   ansible.builtin.systemd_service:
-  #    name: nginx
-  #    state: started
-  #    enable: yes
-
   - name: enable the nginx
     ansible.builtin.systemd_service:
       name: nginx
       state: started
       enabled: yes
 
-  - name: remove the files
+  - name: dlt html dir
     ansible.builtin.file:
       path: /usr/share/nginx/html
       state: absent
 
-  - name: create a url
+  - name: create html dir
+    ansible.builtin.file:
+      path: /usr/share/nginx/html
+      state: directory
+
+  - name: create url
     ansible.builtin.get_url:
       url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
       dest: /tmp/frontend.zip
 
-  - name: unzip the file
+  - name: unzip file
     ansible.builtin.unarchive:
-      src:  /tmp/frontend.zip
-      dest: /usr/local/bin
+      src: /tmp/frontend.zip
+      dest: /usr/share/nginx/html
       remote_src: yes
 
-  - name: copy front service
+  - name: copy frontend service
     ansible.builtin.copy:
       src: expense.conf
       dest: /etc/nginx/default.d/expense.conf
@@ -43,4 +42,4 @@
   - name: restart nginx
     ansible.builtin.service:
       state: restarted
-      name: nginx   
+      name: nginx
