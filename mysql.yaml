@@ -20,6 +20,11 @@
       login_host: mysql.katta.blog
     register: mysql_info
 
+  - name: installing modules
+    ansible.builtin.command:
+      name: PyMySQL
+      executable: pip3.9
+
   - name: print output
     ansible.builtin.debug:
      msg: mysql_info "{{ mysql_info }}"
