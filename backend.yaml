@@ -50,7 +50,7 @@
 
   - name: copy the files
     ansible.builtin.copy:
-      src: be.service
+      src: backend.service
       dest: /etc/systemd/system/backend.service
 
   - name: import mysql data
