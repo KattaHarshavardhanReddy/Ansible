@@ -29,9 +29,9 @@
     loop: "{{ instances }}"
     register: ec2_info
 
-  - name: print the details
-    ansible.builtin.debug:
-      msg: "{{ ec2_info }}"
+  #- name: print the details
+  #  ansible.builtin.debug:
+  #    msg: "{{ ec2_info }}"
 
   - name: print ip addresses
     ansible.builtin.debug:
