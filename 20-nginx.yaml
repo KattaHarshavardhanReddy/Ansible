@@ -1,6 +1,7 @@
 - name: install nginx
   hosts: all
   become: yes
+  serial: 10
   tasks:
   - name: install nginx
     ansible.builtin.package:
