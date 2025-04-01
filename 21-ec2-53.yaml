@@ -9,8 +9,8 @@
     zone: katta.blog
     instances:
     - mysql
-    - be
-    - fe
+    - backend
+    - frontend
 
   tasks:
   - name: install pip libs
